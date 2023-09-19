@@ -10,12 +10,23 @@
       </div>
       <div id="buttons" class="coord-input">
         <input
+          id="button"
           v-on:click="summarizeMarkers"
           type="button"
           value="Get All Markers and Refresh"
         />
-        <input v-on:click="updateMarker" type="button" value="Update Marker" />
-        <input v-on:click="removeMarker" type="button" value="Remove Marker" />
+        <input
+          id="button"
+          v-on:click="updateMarker"
+          type="button"
+          value="Update Marker"
+        />
+        <input
+          id="button"
+          v-on:click="removeMarker"
+          type="button"
+          value="Remove Marker"
+        />
       </div>
 
       <div id="report"></div>
@@ -157,25 +168,43 @@ export default {
 
 <style>
 #grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-areas:
-    "intro intro intro intro"
-    "latitude longitude description buttons"
-    "map map report report";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #f8f9fa;
+  border-right: 1px groove #dee2e6;
+  border-top-right-radius: 60px;
+  border-bottom-right-radius:60px ;
+  padding: 10px;
+  overflow-y: auto;
 }
 #intro {
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-#buttons {
+#button{
+  box-shadow:inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+    0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  font-weight: 500;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 #report {
-  width: 400px;
+  width: 300px;
   height: 200px;
-  border: 1px dashed gray;
+  border: 2px ridge black;
+  border-radius: 20px;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
 .coord-input {
-  border: 1px dashed gray;
+  border: 2px ridge black;
+  border-radius: 20px;
   padding: 25px;
   margin: 25px;
 }

@@ -65,6 +65,10 @@ Toplamda bugün harcadığım süre 10-11 saat arası olabilir. Framework e ente
 # 19 eylül 2023 - Salı
 
 Paketlerdeki terslikleri vs manuel temizlemek yerine temiz bir start ile başlamaya karar vermiştim. Uygulamayı yeni bir cli üzerinde kurdum. Macos in sudo problemleriyle uğraştım... Yaklaşık 2 saat sürdü.
+Css çalışmalarım için herkesin bildiği referansı kullandım.
+>https://developer.mozilla.org/en-US/docs/Web/CSS
+
+Bugün toplam 4 saatlik bir çalışmam oldu.
 
 ## Project setup
 

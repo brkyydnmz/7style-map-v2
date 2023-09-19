@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h1 style="text-align: center">Google Maps Drive Rotation</h1>
+    <h1 style="text-align: center">Google Maps Rotation</h1>
 
     <nav class="nav">
-      <select name="" id="" v-model="fromLocation">
-        <option value="">--from--</option>
+      <select  id="select" v-model="fromLocation">
+        <option value="">From</option>
         <option
           v-for="(eachLocation, index) in locations"
           v-bind:key="index"
@@ -14,8 +14,8 @@
         </option>
       </select>
 
-      <select name="" id="" v-model="toLocation">
-        <option value="">--to--</option>
+      <select  id="select" v-model="toLocation">
+        <option value="">To</option>
         <option
           v-for="(eachLocation, index) in locations"
           v-bind:key="index"
@@ -25,11 +25,11 @@
         </option>
       </select>
 
-      <button v-on:click="calculateRoute(fromLocation, toLocation)">
+      <button id="button" v-on:click="calculateRoute(fromLocation, toLocation)">
         Get Route!
       </button>
 
-      <button v-on:click="clearRoutes()">Clear!</button>
+      <button id="button" v-on:click="clearRoutes()">Clear!</button>
     </nav>
 
     <div id="map"></div>
@@ -123,15 +123,43 @@ export default {
 };
 </script>
 
-<style scoped>
+<style >
 #map {
-  grid-area: map;
-  width: 1000px;
-  height: 400px;
-  padding: 25px;
-  margin: 25px auto;
+  width: 70%;
+  height: 580px;
+  padding: 20px;
+  margin-left: 25%;
+  border-radius: 10px;
+  box-shadow:inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+    0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+
+#select{
+  background-color:#ffffff;
+  box-shadow:inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+    0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  font-weight: 400;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#button{
+  background-color:#ffffff;
+  box-shadow:inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+    0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  font-weight: 400;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .nav {
   text-align: center;
+  margin-bottom: 20px;
 }
 </style>
